@@ -1,16 +1,29 @@
-# my_app_name
+# drink_bot
+A new datalab drink bot project.
+## Using
+open iOS Simulator
+```bash=
+$ open -a simulator 
+```
 
-A new Flutter project.
+run mobile app
+```bash=
+$ flutter run
+```
 
-## Getting Started
+run web app
+```bash=
+$ flutter run -d chrome
+```
 
-This project is a starting point for a Flutter application.
+## Installation
+https://chucs.github.io/flutter-001-install/
 
-A few resources to get you started if this is your first Flutter project:
+https://flutter.dev/docs/get-started/install
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Development
+https://dart.dev/
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://flutter.dev/
+## Api
+https://github.com/pin-yu/datalab-drinks-backend
