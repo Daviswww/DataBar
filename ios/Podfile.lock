@@ -1,21 +1,34 @@
 PODS:
   - Flutter (1.0.0)
+  - flutter_udid (0.0.1):
+    - Flutter
+    - SAMKeychain
   - path_provider (0.0.1):
     - Flutter
+  - SAMKeychain (1.5.3)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - flutter_udid (from `.symlinks/plugins/flutter_udid/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
+
+SPEC REPOS:
+  trunk:
+    - SAMKeychain
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  flutter_udid:
+    :path: ".symlinks/plugins/flutter_udid/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_udid: c9d59b0a440e137882faa5cf53a3501e906fb8c2
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

@@ -33,7 +33,7 @@ dependencies:
   flutter_svg: ^0.18.0
   google_fonts: ^1.1.2
   provider: ^4.3.3
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
