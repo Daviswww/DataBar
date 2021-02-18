@@ -11,9 +11,10 @@ class FormRoute extends StatefulWidget {
   const FormRoute({
     Key key,
     @required this.drink,
+    @required this.menuContext,
   }) : super(key: key);
   final Item drink;
-
+  final BuildContext menuContext;
   @override
   _FormRouteState createState() => _FormRouteState();
 }
@@ -76,6 +77,7 @@ class _FormRouteState extends State<FormRoute> {
       ),
       body: SelectForm(
         drink: widget.drink,
+        menuContext: widget.menuContext,
       ),
     );
   }
@@ -85,9 +87,10 @@ class SelectForm extends StatefulWidget {
   const SelectForm({
     Key key,
     @required this.drink,
+    @required this.menuContext,
   }) : super(key: key);
   final Item drink;
-
+  final BuildContext menuContext;
   @override
   _SelectFormState createState() => _SelectFormState();
 }
@@ -191,29 +194,38 @@ class _SelectFormState extends State<SelectForm> {
             setState(() {
               orderBy = myController.text;
               final response = API_Manager().postOrder(
-                  orderBy, cupSize, widget.drink.itemId, cupSugar, cupIce);
+                orderBy,
+                cupSize,
+                widget.drink.itemId,
+                cupSugar,
+                cupIce,
+              );
+
               response.then((value) {
                 if (value.statusCode == 200) {
-                  Scaffold.of(context).showSnackBar(
+                  Scaffold.of(widget.menuContext).showSnackBar(
                     new SnackBar(
                       duration: Duration(seconds: 2),
-                      content: Text('$orderBy的訂單送出'),
+                      backgroundColor: Colors.teal[400],
+                      content: Text('$orderBy 的訂單送出'),
                       behavior: SnackBarBehavior.floating,
                     ),
                   );
+                  Navigator.pop(context);
+                  Navigator.of(context).pop();
                 } else {
                   Scaffold.of(context).showSnackBar(
                     new SnackBar(
                       duration: Duration(seconds: 2),
-                      content: Text('訂單飛到外太空了啦～'),
+                      backgroundColor: Colors.red[300],
+                      content: Text('你沒有輸入名字喲～'),
                       behavior: SnackBarBehavior.floating,
                     ),
                   );
+                  Navigator.pop(context);
                 }
               });
             });
-            Navigator.pop(context);
-            Navigator.of(context).pop();
           },
         ),
       ],
